@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rss | dmaser@github]]></title>
+  <link href="http://dmaser.github.com/blog/categories/rss/atom.xml" rel="self"/>
+  <link href="http://dmaser.github.com/"/>
+  <updated>2013-04-08T14:11:11-07:00</updated>
+  <id>http://dmaser.github.com/</id>
+  <author>
+    <name><![CDATA[dmaser]]></name>
+    <email><![CDATA[git@gnarly.info]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Building a replacement for Google Reader]]></title>
+    <link href="http://dmaser.github.com/blog/2013/04/08/building-a-replacement-for-google-reader/"/>
+    <updated>2013-04-08T10:32:00-07:00</updated>
+    <id>http://dmaser.github.com/blog/2013/04/08/building-a-replacement-for-google-reader</id>
+    <content type="html"><![CDATA[<p>As everyone knows, Google Reader is going away on July 1. For most people there are many appealing choices already out there.
+For hosted solutions, <a href="http://www.newsblur.com/">Newsblur</a> and <a href="http://www.feedly.com">Feedly</a> seem to be excellent options.
+<a href="http://tt-rss.org">Tiny Tiny RSS</a> looks great if you're looking for a self-hosted option. I may actually end up using one of those. But...what if I tried
+to write my own?</p>
+
+<p>Now, I don't believe that I can build anything better than the existing options, but I couldn't help wonder, what does it take to build a feed aggregator/reader?
+ And what would I do different if I built one myself?</p>
+
+<h2>Design Goals</h2>
+
+<ul>
+<li>Compact view. I follow over 500 feeds. The last thing I want to do is scroll through them 3 items at a time. And for me, most feeds are more about the text,
+than the images.</li>
+<li>Less emphasis on social sharing. I'm more about scanning lots of feeds. Plus, I don't usually know if an item is shareable until
+I've gone to the web site to read the full content.</li>
+<li>Tag-based scoring. Not sure how this will work yet, but some feeds post so many articles in a day that even just skimming for anything of interest
+is nearly impossible.</li>
+</ul>
+
+
+<h2>Tools</h2>
+
+<p>My choice of tools is a mix of what I already know and what I'm interested in learning more about:</p>
+
+<ul>
+<li>Backend code: Java. I use Java at my job, so I see this is a good way to hone my skills.</li>
+<li>RSS/Atom parsing: <a href="https://rometools.jira.com/wiki/display/ROME/Home">Rome</a>. I'm currently doing my own fetching in Java, but I may later look at the
+Rome subproject Rome Fetcher.</li>
+<li>Web sockets: <a href="https://github.com/TooTallNate/Java-WebSocket">Java-WebSocket</a>. Just learning and playing around with web sockets to keep the frontend up to date.
+I'm not sure if it's necessary or even practical yet.</li>
+<li>Storage: <a href="http://www.mongodb.org/">MongoDB</a>. I'm relatively new to NoSQL. But since I'll be dealing with a lot of JSON in this project, a document store seems
+to make sense. I chose MongoDB after looking at a few other options because it was almost effortless to get started with it.</li>
+<li>Frontend: plain old HTML, Javascript, CSS. At the beginning I don't plan on using any JS frameworks. At some point I'll probably use something like jQuery,
+but while I'm still exploring how the app will actually work, I want to keep it as simple as possible. Plus it wouldn't hurt to improve my Javascript skills.</li>
+</ul>
+
+
+<h2>Status</h2>
+
+<p>After a couple of weekends I've got a fairly minimal prototype. (Code repo coming soon!) I've been testing with 4 or 5 feeds which produce a varitey of different
+types of feeds. There quite a mix of which attributes a feed provider chooses to use. Some feeds don't provide any content, only a description or comments, for example.
+For the frontend I'm currently generating a static web page (with a tiny bit of web socket action added recently).</p>
+
+<p>My frontend design skills are, let's just say, somewhat weak :-), but I'm pretty happy with the way it's shaping up. Here's a sample:</p>
+
+<p><img src="images/prototype1.png" title="Early version of a Google Reader replacement" alt="early version of prototype" /></p>
+
+<p>Right now there's not yet any management code, so next few tasks will be tying the frontend up to the backend to start saving read/unread/new status and application state and minimal tools to add/delete/rearrange
+feeds.</p>
+]]></content>
+  </entry>
+  
+</feed>
