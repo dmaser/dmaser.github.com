@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rss | dmaser@github]]></title>
   <link href="http://dmaser.github.com/blog/categories/rss/atom.xml" rel="self"/>
   <link href="http://dmaser.github.com/"/>
-  <updated>2013-04-08T14:11:11-07:00</updated>
+  <updated>2013-04-08T14:33:34-07:00</updated>
   <id>http://dmaser.github.com/</id>
   <author>
     <name><![CDATA[dmaser]]></name>
@@ -63,7 +63,7 @@ For the frontend I'm currently generating a static web page (with a tiny bit of 
 
 <p>My frontend design skills are, let's just say, somewhat weak :-), but I'm pretty happy with the way it's shaping up. Here's a sample:</p>
 
-<p><img src="images/prototype1.png" title="Early version of a Google Reader replacement" alt="early version of prototype" /></p>
+<p><img src="http://dmaser.github.io/images/prototype1.png" title="Early version of a Google Reader replacement" alt="early version of prototype" /></p>
 
 <p>Right now there's not yet any management code, so next few tasks will be tying the frontend up to the backend to start saving read/unread/new status and application state and minimal tools to add/delete/rearrange
 feeds.</p>
